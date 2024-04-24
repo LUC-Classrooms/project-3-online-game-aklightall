@@ -47,7 +47,7 @@ function Player(tempX, tempY) {
   this.move = function () {
 //folow the mouse for now
     this.x = mouseX;
-    this.y = mouseY;
+    //this.y = mouseY;
 
   }
 }
