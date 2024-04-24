@@ -64,7 +64,7 @@ function play() {
   if(gameTimer.isFinished()){
     gameState = "gameOver" ;
   }
-
+  text("remaining time: " + Math.trunc((gameTimer.time - gameTimer.elapsedTime)/1000), width/2, 40)
 }
 
 function gameOver() {
