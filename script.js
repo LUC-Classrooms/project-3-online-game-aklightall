@@ -10,6 +10,7 @@ var gameTimer; // time the game play
 var testBox; // a box to preview on the splash screen
 var dropTimer; // regulate box drops
 var presents = new Array(0); // an empty array called "presents"
+var score = 0; // keep track of points (starting at 0)
 
 function setup() {
 
@@ -100,12 +101,15 @@ function play() {
       if (d < 50) {
         // Remove the present from the array
         presents.splice(i, 1);
+        score++; // increment the score
         // Perform any other actions you want when a collision occurs
       }
     }
   }
 
-
+  textAlign(LEFT);
+  text("Elapsed time: " + gameTimer.elapsedTime, 20, 20); //show elapsed time in ms
+  text("Score: " + score, 20, 40);
  
   text("remaining time: " + Math.trunc((gameTimer.time - gameTimer.elapsedTime)/1000), width/2, 40);
 }
