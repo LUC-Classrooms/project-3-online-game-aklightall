@@ -93,6 +93,7 @@ function play() {
       // present went below the canvas
       presents.splice(i, 1);
       // remove from array
+      score--; // decrement score by 1
     } else {
       // Calculate distance between present and player
       let d = dist(presents[i].x, presents[i].y, player1.x, player1.y);
@@ -130,6 +131,7 @@ function mousePressed() {
   if(gameState == "splash"){
     gameState = "play";
     gameTimer.start(); // start the timer 
+    score = 0; // reset score to 0 at start of game
   } else if (gameState == "play"){
     gameState = "gameOver";
   } else if (gameState == "gameOver"){
@@ -138,6 +140,7 @@ function mousePressed() {
     gameState = "play"; // go to the play() screen
     gameTimer.start(12); // start the game timer
     dropTimer.start(15); // start the drop timer for presents
+    score = 0; // reset score to 0 at start of game
   }
 }
 console.log(gameState);
