@@ -82,7 +82,6 @@ function play() {
       dropTimer.start(); // restart timer for next drop
   }
 
-
   // Loop through the presents array and display, move, and spin each present
   for (let i = 0; i < presents.length; i++) {
     presents[i].display();
